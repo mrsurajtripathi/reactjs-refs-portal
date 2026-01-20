@@ -2,32 +2,22 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Player from './components/Player'
+import { Player2 } from './components/Player2'
+import Challenge from './components/Challenge'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Player/> //problem is with for a single imput boc change we are writing a lot of code
+      {/* <Player2/> */}
+      <div id="challenges">
+      <Challenge title='Easy' targetTime="1" />
+      <Challenge title='Not Easy' targetTime="5" />
+      <Challenge title='Pro' targetTime="10" />
+      <Challenge title='Harder' targetTime="15" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
